@@ -1,0 +1,350 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		871DEDE6166ABCAA005F4688 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 871DEDE4166ABC91005F4688 /* MobileCoreServices.framework */; };
+		873CBD4C166A99EA00ECB4C5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 873CBD4B166A99EA00ECB4C5 /* UIKit.framework */; };
+		873CBD4E166A99EA00ECB4C5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 873CBD4D166A99EA00ECB4C5 /* Foundation.framework */; };
+		873CBD50166A99EA00ECB4C5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 873CBD4F166A99EA00ECB4C5 /* CoreGraphics.framework */; };
+		873CBD56166A99EA00ECB4C5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 873CBD54166A99EA00ECB4C5 /* InfoPlist.strings */; };
+		873CBD58166A99EA00ECB4C5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 873CBD57166A99EA00ECB4C5 /* main.m */; };
+		873CBD5C166A99EA00ECB4C5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 873CBD5B166A99EA00ECB4C5 /* AppDelegate.m */; };
+		873CBD7D166A9A1500ECB4C5 /* WresttHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 873CBD69166A9A1500ECB4C5 /* WresttHomeViewController.m */; };
+		873CBD7E166A9A1500ECB4C5 /* WresttHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 873CBD6A166A9A1500ECB4C5 /* WresttHomeViewController.xib */; };
+		873CBD7F166A9A1500ECB4C5 /* WresttLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 873CBD6C166A9A1500ECB4C5 /* WresttLoginViewController.m */; };
+		873CBD80166A9A1500ECB4C5 /* WresttLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 873CBD6D166A9A1500ECB4C5 /* WresttLoginViewController.xib */; };
+		873CBD81166A9A1500ECB4C5 /* WresttProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 873CBD6F166A9A1500ECB4C5 /* WresttProfileViewController.m */; };
+		873CBD82166A9A1500ECB4C5 /* WresttProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 873CBD70166A9A1500ECB4C5 /* WresttProfileViewController.xib */; };
+		873CBD83166A9A1500ECB4C5 /* WresttQuizViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 873CBD72166A9A1500ECB4C5 /* WresttQuizViewController.m */; };
+		873CBD84166A9A1500ECB4C5 /* WresttQuizViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 873CBD73166A9A1500ECB4C5 /* WresttQuizViewController.xib */; };
+		873CBD85166A9A1500ECB4C5 /* WresttTakeQuizViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 873CBD75166A9A1500ECB4C5 /* WresttTakeQuizViewController.m */; };
+		873CBD86166A9A1500ECB4C5 /* WresttTakeQuizViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 873CBD76166A9A1500ECB4C5 /* WresttTakeQuizViewController.xib */; };
+		873CBD87166A9A1500ECB4C5 /* WresttToolsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 873CBD78166A9A1500ECB4C5 /* WresttToolsDetailViewController.m */; };
+		873CBD88166A9A1500ECB4C5 /* WresttToolsDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 873CBD79166A9A1500ECB4C5 /* WresttToolsDetailViewController.xib */; };
+		873CBD89166A9A1500ECB4C5 /* WresttToolsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 873CBD7B166A9A1500ECB4C5 /* WresttToolsViewController.m */; };
+		873CBD8A166A9A1500ECB4C5 /* WresttToolsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 873CBD7C166A9A1500ECB4C5 /* WresttToolsViewController.xib */; };
+		87FD7C77166AA63D00EA6C25 /* defaultProfilePicture.png in Resources */ = {isa = PBXBuildFile; fileRef = 87FD7C76166AA63D00EA6C25 /* defaultProfilePicture.png */; };
+		87FF34F4166A9AAA0002A329 /* WresttLogo.gif in Resources */ = {isa = PBXBuildFile; fileRef = 87FF34F3166A9AAA0002A329 /* WresttLogo.gif */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		871DEDE4166ABC91005F4688 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		873CBD47166A99EA00ECB4C5 /* WresttApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WresttApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		873CBD4B166A99EA00ECB4C5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		873CBD4D166A99EA00ECB4C5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		873CBD4F166A99EA00ECB4C5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		873CBD53166A99EA00ECB4C5 /* WresttApp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WresttApp-Info.plist"; sourceTree = "<group>"; };
+		873CBD55166A99EA00ECB4C5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		873CBD57166A99EA00ECB4C5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		873CBD59166A99EA00ECB4C5 /* WresttApp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WresttApp-Prefix.pch"; sourceTree = "<group>"; };
+		873CBD5A166A99EA00ECB4C5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		873CBD5B166A99EA00ECB4C5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		873CBD68166A9A1500ECB4C5 /* WresttHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WresttHomeViewController.h; sourceTree = "<group>"; };
+		873CBD69166A9A1500ECB4C5 /* WresttHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WresttHomeViewController.m; sourceTree = "<group>"; };
+		873CBD6A166A9A1500ECB4C5 /* WresttHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WresttHomeViewController.xib; sourceTree = "<group>"; };
+		873CBD6B166A9A1500ECB4C5 /* WresttLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WresttLoginViewController.h; sourceTree = "<group>"; };
+		873CBD6C166A9A1500ECB4C5 /* WresttLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WresttLoginViewController.m; sourceTree = "<group>"; };
+		873CBD6D166A9A1500ECB4C5 /* WresttLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WresttLoginViewController.xib; sourceTree = "<group>"; };
+		873CBD6E166A9A1500ECB4C5 /* WresttProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WresttProfileViewController.h; sourceTree = "<group>"; };
+		873CBD6F166A9A1500ECB4C5 /* WresttProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WresttProfileViewController.m; sourceTree = "<group>"; };
+		873CBD70166A9A1500ECB4C5 /* WresttProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WresttProfileViewController.xib; sourceTree = "<group>"; };
+		873CBD71166A9A1500ECB4C5 /* WresttQuizViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WresttQuizViewController.h; sourceTree = "<group>"; };
+		873CBD72166A9A1500ECB4C5 /* WresttQuizViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WresttQuizViewController.m; sourceTree = "<group>"; };
+		873CBD73166A9A1500ECB4C5 /* WresttQuizViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WresttQuizViewController.xib; sourceTree = "<group>"; };
+		873CBD74166A9A1500ECB4C5 /* WresttTakeQuizViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WresttTakeQuizViewController.h; sourceTree = "<group>"; };
+		873CBD75166A9A1500ECB4C5 /* WresttTakeQuizViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WresttTakeQuizViewController.m; sourceTree = "<group>"; };
+		873CBD76166A9A1500ECB4C5 /* WresttTakeQuizViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WresttTakeQuizViewController.xib; sourceTree = "<group>"; };
+		873CBD77166A9A1500ECB4C5 /* WresttToolsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WresttToolsDetailViewController.h; sourceTree = "<group>"; };
+		873CBD78166A9A1500ECB4C5 /* WresttToolsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WresttToolsDetailViewController.m; sourceTree = "<group>"; };
+		873CBD79166A9A1500ECB4C5 /* WresttToolsDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WresttToolsDetailViewController.xib; sourceTree = "<group>"; };
+		873CBD7A166A9A1500ECB4C5 /* WresttToolsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WresttToolsViewController.h; sourceTree = "<group>"; };
+		873CBD7B166A9A1500ECB4C5 /* WresttToolsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WresttToolsViewController.m; sourceTree = "<group>"; };
+		873CBD7C166A9A1500ECB4C5 /* WresttToolsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WresttToolsViewController.xib; sourceTree = "<group>"; };
+		87FD7C76166AA63D00EA6C25 /* defaultProfilePicture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = defaultProfilePicture.png; sourceTree = "<group>"; };
+		87FF34F3166A9AAA0002A329 /* WresttLogo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = WresttLogo.gif; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		873CBD44166A99EA00ECB4C5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				871DEDE6166ABCAA005F4688 /* MobileCoreServices.framework in Frameworks */,
+				873CBD4C166A99EA00ECB4C5 /* UIKit.framework in Frameworks */,
+				873CBD4E166A99EA00ECB4C5 /* Foundation.framework in Frameworks */,
+				873CBD50166A99EA00ECB4C5 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		873CBD3C166A99EA00ECB4C5 = {
+			isa = PBXGroup;
+			children = (
+				87FF34F3166A9AAA0002A329 /* WresttLogo.gif */,
+				87FD7C76166AA63D00EA6C25 /* defaultProfilePicture.png */,
+				873CBD51166A99EA00ECB4C5 /* WresttApp */,
+				873CBD4A166A99EA00ECB4C5 /* Frameworks */,
+				873CBD48166A99EA00ECB4C5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		873CBD48166A99EA00ECB4C5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				873CBD47166A99EA00ECB4C5 /* WresttApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		873CBD4A166A99EA00ECB4C5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				871DEDE4166ABC91005F4688 /* MobileCoreServices.framework */,
+				873CBD4B166A99EA00ECB4C5 /* UIKit.framework */,
+				873CBD4D166A99EA00ECB4C5 /* Foundation.framework */,
+				873CBD4F166A99EA00ECB4C5 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		873CBD51166A99EA00ECB4C5 /* WresttApp */ = {
+			isa = PBXGroup;
+			children = (
+				873CBD5A166A99EA00ECB4C5 /* AppDelegate.h */,
+				873CBD5B166A99EA00ECB4C5 /* AppDelegate.m */,
+				873CBD68166A9A1500ECB4C5 /* WresttHomeViewController.h */,
+				873CBD69166A9A1500ECB4C5 /* WresttHomeViewController.m */,
+				873CBD6A166A9A1500ECB4C5 /* WresttHomeViewController.xib */,
+				873CBD6B166A9A1500ECB4C5 /* WresttLoginViewController.h */,
+				873CBD6C166A9A1500ECB4C5 /* WresttLoginViewController.m */,
+				873CBD6D166A9A1500ECB4C5 /* WresttLoginViewController.xib */,
+				873CBD6E166A9A1500ECB4C5 /* WresttProfileViewController.h */,
+				873CBD6F166A9A1500ECB4C5 /* WresttProfileViewController.m */,
+				873CBD70166A9A1500ECB4C5 /* WresttProfileViewController.xib */,
+				873CBD71166A9A1500ECB4C5 /* WresttQuizViewController.h */,
+				873CBD72166A9A1500ECB4C5 /* WresttQuizViewController.m */,
+				873CBD73166A9A1500ECB4C5 /* WresttQuizViewController.xib */,
+				873CBD74166A9A1500ECB4C5 /* WresttTakeQuizViewController.h */,
+				873CBD75166A9A1500ECB4C5 /* WresttTakeQuizViewController.m */,
+				873CBD76166A9A1500ECB4C5 /* WresttTakeQuizViewController.xib */,
+				873CBD77166A9A1500ECB4C5 /* WresttToolsDetailViewController.h */,
+				873CBD78166A9A1500ECB4C5 /* WresttToolsDetailViewController.m */,
+				873CBD79166A9A1500ECB4C5 /* WresttToolsDetailViewController.xib */,
+				873CBD7A166A9A1500ECB4C5 /* WresttToolsViewController.h */,
+				873CBD7B166A9A1500ECB4C5 /* WresttToolsViewController.m */,
+				873CBD7C166A9A1500ECB4C5 /* WresttToolsViewController.xib */,
+				873CBD52166A99EA00ECB4C5 /* Supporting Files */,
+			);
+			path = WresttApp;
+			sourceTree = "<group>";
+		};
+		873CBD52166A99EA00ECB4C5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				873CBD53166A99EA00ECB4C5 /* WresttApp-Info.plist */,
+				873CBD54166A99EA00ECB4C5 /* InfoPlist.strings */,
+				873CBD57166A99EA00ECB4C5 /* main.m */,
+				873CBD59166A99EA00ECB4C5 /* WresttApp-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		873CBD46166A99EA00ECB4C5 /* WresttApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 873CBD65166A99EB00ECB4C5 /* Build configuration list for PBXNativeTarget "WresttApp" */;
+			buildPhases = (
+				873CBD43166A99EA00ECB4C5 /* Sources */,
+				873CBD44166A99EA00ECB4C5 /* Frameworks */,
+				873CBD45166A99EA00ECB4C5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WresttApp;
+			productName = WresttApp;
+			productReference = 873CBD47166A99EA00ECB4C5 /* WresttApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		873CBD3E166A99EA00ECB4C5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+			};
+			buildConfigurationList = 873CBD41166A99EA00ECB4C5 /* Build configuration list for PBXProject "WresttApp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 873CBD3C166A99EA00ECB4C5;
+			productRefGroup = 873CBD48166A99EA00ECB4C5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				873CBD46166A99EA00ECB4C5 /* WresttApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		873CBD45166A99EA00ECB4C5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				873CBD56166A99EA00ECB4C5 /* InfoPlist.strings in Resources */,
+				873CBD7E166A9A1500ECB4C5 /* WresttHomeViewController.xib in Resources */,
+				873CBD80166A9A1500ECB4C5 /* WresttLoginViewController.xib in Resources */,
+				873CBD82166A9A1500ECB4C5 /* WresttProfileViewController.xib in Resources */,
+				873CBD84166A9A1500ECB4C5 /* WresttQuizViewController.xib in Resources */,
+				873CBD86166A9A1500ECB4C5 /* WresttTakeQuizViewController.xib in Resources */,
+				873CBD88166A9A1500ECB4C5 /* WresttToolsDetailViewController.xib in Resources */,
+				873CBD8A166A9A1500ECB4C5 /* WresttToolsViewController.xib in Resources */,
+				87FF34F4166A9AAA0002A329 /* WresttLogo.gif in Resources */,
+				87FD7C77166AA63D00EA6C25 /* defaultProfilePicture.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		873CBD43166A99EA00ECB4C5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				873CBD58166A99EA00ECB4C5 /* main.m in Sources */,
+				873CBD5C166A99EA00ECB4C5 /* AppDelegate.m in Sources */,
+				873CBD7D166A9A1500ECB4C5 /* WresttHomeViewController.m in Sources */,
+				873CBD7F166A9A1500ECB4C5 /* WresttLoginViewController.m in Sources */,
+				873CBD81166A9A1500ECB4C5 /* WresttProfileViewController.m in Sources */,
+				873CBD83166A9A1500ECB4C5 /* WresttQuizViewController.m in Sources */,
+				873CBD85166A9A1500ECB4C5 /* WresttTakeQuizViewController.m in Sources */,
+				873CBD87166A9A1500ECB4C5 /* WresttToolsDetailViewController.m in Sources */,
+				873CBD89166A9A1500ECB4C5 /* WresttToolsViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		873CBD54166A99EA00ECB4C5 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				873CBD55166A99EA00ECB4C5 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		873CBD63166A99EB00ECB4C5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		873CBD64166A99EB00ECB4C5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		873CBD66166A99EB00ECB4C5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WresttApp/WresttApp-Prefix.pch";
+				INFOPLIST_FILE = "WresttApp/WresttApp-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		873CBD67166A99EB00ECB4C5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WresttApp/WresttApp-Prefix.pch";
+				INFOPLIST_FILE = "WresttApp/WresttApp-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		873CBD41166A99EA00ECB4C5 /* Build configuration list for PBXProject "WresttApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				873CBD63166A99EB00ECB4C5 /* Debug */,
+				873CBD64166A99EB00ECB4C5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		873CBD65166A99EB00ECB4C5 /* Build configuration list for PBXNativeTarget "WresttApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				873CBD66166A99EB00ECB4C5 /* Debug */,
+				873CBD67166A99EB00ECB4C5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 873CBD3E166A99EA00ECB4C5 /* Project object */;
+}
