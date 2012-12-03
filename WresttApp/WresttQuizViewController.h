@@ -10,10 +10,14 @@
 
 @class WresttTakeQuizViewController;
 
-@interface WresttQuizViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface WresttQuizViewController : UIViewController
+
+@property (strong, nonatomic) WresttTakeQuizViewController *takeQuizViewController;
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
-@property (strong, nonatomic) WresttTakeQuizViewController *takeQuizViewController;
+@property (strong, nonatomic) IBOutlet UISearchDisplayController *searchDisplayController;
+
+@property (strong, nonatomic) NSArray *tableData;
+@property (strong, nonatomic) NSArray *searchResults;
 
 @end

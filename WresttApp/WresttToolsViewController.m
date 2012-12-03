@@ -7,7 +7,9 @@
 //
 
 #import "WresttToolsViewController.h"
+#import "WresttDatabaseInterface.h"
 #import "WresttToolsDetailViewController.h"
+#import "WresttTool.h"
 
 @interface WresttToolsViewController ()
 
@@ -15,12 +17,13 @@
 
 @implementation WresttToolsViewController
 
-@synthesize tableView = _tableView, searchBar, toolDetailViewController;
+@synthesize databaseInterface =_databaseInterface, toolDetailViewController = _toolDetailViewController, tableView = _tableView, searchDisplayController = _toolSearchDisplayController, tableData = _tableData, searchResults = _searchResults;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
+    if (self)
+    {
         // Custom initialization
         self.title = @"Tools";
     }
@@ -31,12 +34,15 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    _databaseInterface = [WresttDatabaseInterface sharedDatabaseInterface];
+
+    self.tableData = [self.databaseInterface getTools];
+
+    [self.tableView reloadData];
 }
 
 - (void)viewDidUnload
 {
-    [self setTableView:nil];
-    [self setSearchBar:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -56,7 +62,18 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 10;
+    NSInteger rows = 0;
+
+    if ([tableView isEqual:self.searchDisplayController.searchResultsTableView])
+    {
+        rows = [self.searchResults count];
+    }
+    else
+    {
+        rows = [self.tableData count];
+    }
+
+    return rows;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -68,26 +85,63 @@
     if (cell == nil)
     {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
+
+    WresttTool *tool;
     
-    cell.textLabel.text = [NSString stringWithFormat: @"Tool Name #%i", indexPath.row];
-    cell.detailTextLabel.text = @"Categories";
-    
+    if ([tableView isEqual:self.searchDisplayController.searchResultsTableView])
+    {
+        tool = [self.searchResults objectAtIndex:indexPath.row];
+    }
+    else
+    {
+        tool = [self.tableData objectAtIndex:indexPath.row];
+    }
+
+    cell.textLabel.text = tool.name;
+    cell.detailTextLabel.text = tool.category;
+
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (toolDetailViewController == nil)
+    if (self.toolDetailViewController == nil)
     {
-        toolDetailViewController = [[WresttToolsDetailViewController alloc] initWithNibName:@"WresttToolsDetailViewController" bundle:nil];
+        _toolDetailViewController = [[WresttToolsDetailViewController alloc] initWithNibName:@"WresttToolsDetailViewController" bundle:nil];
     }
     
-    [toolDetailViewController setTitle:[tableView cellForRowAtIndexPath:indexPath].textLabel.text];
+    [self.toolDetailViewController setTitle:[tableView cellForRowAtIndexPath:indexPath].textLabel.text];
     
-    [self.navigationController pushViewController:toolDetailViewController animated:YES];
+    [self.navigationController pushViewController:self.toolDetailViewController animated:YES];
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+#pragma mark - UISearchDisplayController delegate methods
+-(BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchString:(NSString *)searchString
+{
+    [self filterContentForSearchText:searchString
+                               scope:[[self.searchDisplayController.searchBar scopeButtonTitles]
+                                      objectAtIndex:[self.searchDisplayController.searchBar
+                                                     selectedScopeButtonIndex]]];
+    return YES;
+}
+
+- (BOOL)searchDisplayController:(UISearchDisplayController *)controller shouldReloadTableForSearchScope:(NSInteger)searchOption
+{
+    [self filterContentForSearchText:[self.searchDisplayController.searchBar text]
+                               scope:[[self.searchDisplayController.searchBar scopeButtonTitles]
+                                      objectAtIndex:searchOption]];
+    return YES;
+}
+
+- (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope
+{
+    NSPredicate *resultPredicate = [NSPredicate predicateWithFormat:@"SELF contains[cd] %@", searchText];
+
+    self.searchResults = [self.tableData filteredArrayUsingPredicate:resultPredicate];
 }
 
 @end

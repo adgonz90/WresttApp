@@ -30,6 +30,13 @@
 		873CBD8A166A9A1500ECB4C5 /* WresttToolsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 873CBD7C166A9A1500ECB4C5 /* WresttToolsViewController.xib */; };
 		87FD7C77166AA63D00EA6C25 /* defaultProfilePicture.png in Resources */ = {isa = PBXBuildFile; fileRef = 87FD7C76166AA63D00EA6C25 /* defaultProfilePicture.png */; };
 		87FF34F4166A9AAA0002A329 /* WresttLogo.gif in Resources */ = {isa = PBXBuildFile; fileRef = 87FF34F3166A9AAA0002A329 /* WresttLogo.gif */; };
+		EA58C9D2166D5D6F00DD6D46 /* WresttDatabaseInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = EA58C9CB166D5D6F00DD6D46 /* WresttDatabaseInterface.m */; };
+		EA58C9D3166D5D6F00DD6D46 /* WresttQuiz.m in Sources */ = {isa = PBXBuildFile; fileRef = EA58C9CD166D5D6F00DD6D46 /* WresttQuiz.m */; };
+		EA58C9D4166D5D6F00DD6D46 /* WresttTool.m in Sources */ = {isa = PBXBuildFile; fileRef = EA58C9CF166D5D6F00DD6D46 /* WresttTool.m */; };
+		EA58C9D5166D5D6F00DD6D46 /* WresttUser.m in Sources */ = {isa = PBXBuildFile; fileRef = EA58C9D1166D5D6F00DD6D46 /* WresttUser.m */; };
+		EA58C9D8166D5D8400DD6D46 /* DejalActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA58C9D7166D5D8400DD6D46 /* DejalActivityView.m */; };
+		EA58C9DD166D5DD200DD6D46 /* wrestt.sqllite in Resources */ = {isa = PBXBuildFile; fileRef = EA58C9DC166D5DD200DD6D46 /* wrestt.sqllite */; };
+		EA58C9E0166D5E4100DD6D46 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EA58C9DE166D5E3300DD6D46 /* libsqlite3.0.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +74,18 @@
 		873CBD7C166A9A1500ECB4C5 /* WresttToolsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WresttToolsViewController.xib; sourceTree = "<group>"; };
 		87FD7C76166AA63D00EA6C25 /* defaultProfilePicture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = defaultProfilePicture.png; sourceTree = "<group>"; };
 		87FF34F3166A9AAA0002A329 /* WresttLogo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = WresttLogo.gif; sourceTree = "<group>"; };
+		EA58C9CA166D5D6F00DD6D46 /* WresttDatabaseInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WresttDatabaseInterface.h; sourceTree = "<group>"; };
+		EA58C9CB166D5D6F00DD6D46 /* WresttDatabaseInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WresttDatabaseInterface.m; sourceTree = "<group>"; };
+		EA58C9CC166D5D6F00DD6D46 /* WresttQuiz.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WresttQuiz.h; sourceTree = "<group>"; };
+		EA58C9CD166D5D6F00DD6D46 /* WresttQuiz.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WresttQuiz.m; sourceTree = "<group>"; };
+		EA58C9CE166D5D6F00DD6D46 /* WresttTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WresttTool.h; sourceTree = "<group>"; };
+		EA58C9CF166D5D6F00DD6D46 /* WresttTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WresttTool.m; sourceTree = "<group>"; };
+		EA58C9D0166D5D6F00DD6D46 /* WresttUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WresttUser.h; sourceTree = "<group>"; };
+		EA58C9D1166D5D6F00DD6D46 /* WresttUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WresttUser.m; sourceTree = "<group>"; };
+		EA58C9D6166D5D8400DD6D46 /* DejalActivityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DejalActivityView.h; sourceTree = "<group>"; };
+		EA58C9D7166D5D8400DD6D46 /* DejalActivityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DejalActivityView.m; sourceTree = "<group>"; };
+		EA58C9DC166D5DD200DD6D46 /* wrestt.sqllite */ = {isa = PBXFileReference; lastKnownFileType = file; name = wrestt.sqllite; path = ../wrestt.sqllite; sourceTree = "<group>"; };
+		EA58C9DE166D5E3300DD6D46 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA58C9E0166D5E4100DD6D46 /* libsqlite3.0.dylib in Frameworks */,
 				871DEDE6166ABCAA005F4688 /* MobileCoreServices.framework in Frameworks */,
 				873CBD4C166A99EA00ECB4C5 /* UIKit.framework in Frameworks */,
 				873CBD4E166A99EA00ECB4C5 /* Foundation.framework in Frameworks */,
@@ -87,6 +107,7 @@
 		873CBD3C166A99EA00ECB4C5 = {
 			isa = PBXGroup;
 			children = (
+				EA58C9C4166D5BB200DD6D46 /* DejalActivityView */,
 				87FF34F3166A9AAA0002A329 /* WresttLogo.gif */,
 				87FD7C76166AA63D00EA6C25 /* defaultProfilePicture.png */,
 				873CBD51166A99EA00ECB4C5 /* WresttApp */,
@@ -106,6 +127,7 @@
 		873CBD4A166A99EA00ECB4C5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EA58C9DE166D5E3300DD6D46 /* libsqlite3.0.dylib */,
 				871DEDE4166ABC91005F4688 /* MobileCoreServices.framework */,
 				873CBD4B166A99EA00ECB4C5 /* UIKit.framework */,
 				873CBD4D166A99EA00ECB4C5 /* Foundation.framework */,
@@ -117,29 +139,12 @@
 		873CBD51166A99EA00ECB4C5 /* WresttApp */ = {
 			isa = PBXGroup;
 			children = (
+				EA58C9DB166D5DC100DD6D46 /* Store */,
+				EA58C9DA166D5D9C00DD6D46 /* Controllers */,
+				EA58C9D9166D5D8F00DD6D46 /* Views */,
+				EA58C9C9166D5D5900DD6D46 /* Model */,
 				873CBD5A166A99EA00ECB4C5 /* AppDelegate.h */,
 				873CBD5B166A99EA00ECB4C5 /* AppDelegate.m */,
-				873CBD68166A9A1500ECB4C5 /* WresttHomeViewController.h */,
-				873CBD69166A9A1500ECB4C5 /* WresttHomeViewController.m */,
-				873CBD6A166A9A1500ECB4C5 /* WresttHomeViewController.xib */,
-				873CBD6B166A9A1500ECB4C5 /* WresttLoginViewController.h */,
-				873CBD6C166A9A1500ECB4C5 /* WresttLoginViewController.m */,
-				873CBD6D166A9A1500ECB4C5 /* WresttLoginViewController.xib */,
-				873CBD6E166A9A1500ECB4C5 /* WresttProfileViewController.h */,
-				873CBD6F166A9A1500ECB4C5 /* WresttProfileViewController.m */,
-				873CBD70166A9A1500ECB4C5 /* WresttProfileViewController.xib */,
-				873CBD71166A9A1500ECB4C5 /* WresttQuizViewController.h */,
-				873CBD72166A9A1500ECB4C5 /* WresttQuizViewController.m */,
-				873CBD73166A9A1500ECB4C5 /* WresttQuizViewController.xib */,
-				873CBD74166A9A1500ECB4C5 /* WresttTakeQuizViewController.h */,
-				873CBD75166A9A1500ECB4C5 /* WresttTakeQuizViewController.m */,
-				873CBD76166A9A1500ECB4C5 /* WresttTakeQuizViewController.xib */,
-				873CBD77166A9A1500ECB4C5 /* WresttToolsDetailViewController.h */,
-				873CBD78166A9A1500ECB4C5 /* WresttToolsDetailViewController.m */,
-				873CBD79166A9A1500ECB4C5 /* WresttToolsDetailViewController.xib */,
-				873CBD7A166A9A1500ECB4C5 /* WresttToolsViewController.h */,
-				873CBD7B166A9A1500ECB4C5 /* WresttToolsViewController.m */,
-				873CBD7C166A9A1500ECB4C5 /* WresttToolsViewController.xib */,
 				873CBD52166A99EA00ECB4C5 /* Supporting Files */,
 			);
 			path = WresttApp;
@@ -154,6 +159,73 @@
 				873CBD59166A99EA00ECB4C5 /* WresttApp-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EA58C9C4166D5BB200DD6D46 /* DejalActivityView */ = {
+			isa = PBXGroup;
+			children = (
+				EA58C9D6166D5D8400DD6D46 /* DejalActivityView.h */,
+				EA58C9D7166D5D8400DD6D46 /* DejalActivityView.m */,
+			);
+			name = DejalActivityView;
+			sourceTree = "<group>";
+		};
+		EA58C9C9166D5D5900DD6D46 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EA58C9CA166D5D6F00DD6D46 /* WresttDatabaseInterface.h */,
+				EA58C9CB166D5D6F00DD6D46 /* WresttDatabaseInterface.m */,
+				EA58C9CC166D5D6F00DD6D46 /* WresttQuiz.h */,
+				EA58C9CD166D5D6F00DD6D46 /* WresttQuiz.m */,
+				EA58C9CE166D5D6F00DD6D46 /* WresttTool.h */,
+				EA58C9CF166D5D6F00DD6D46 /* WresttTool.m */,
+				EA58C9D0166D5D6F00DD6D46 /* WresttUser.h */,
+				EA58C9D1166D5D6F00DD6D46 /* WresttUser.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		EA58C9D9166D5D8F00DD6D46 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				873CBD6A166A9A1500ECB4C5 /* WresttHomeViewController.xib */,
+				873CBD6D166A9A1500ECB4C5 /* WresttLoginViewController.xib */,
+				873CBD70166A9A1500ECB4C5 /* WresttProfileViewController.xib */,
+				873CBD73166A9A1500ECB4C5 /* WresttQuizViewController.xib */,
+				873CBD76166A9A1500ECB4C5 /* WresttTakeQuizViewController.xib */,
+				873CBD79166A9A1500ECB4C5 /* WresttToolsDetailViewController.xib */,
+				873CBD7C166A9A1500ECB4C5 /* WresttToolsViewController.xib */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		EA58C9DA166D5D9C00DD6D46 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				873CBD68166A9A1500ECB4C5 /* WresttHomeViewController.h */,
+				873CBD69166A9A1500ECB4C5 /* WresttHomeViewController.m */,
+				873CBD6B166A9A1500ECB4C5 /* WresttLoginViewController.h */,
+				873CBD6C166A9A1500ECB4C5 /* WresttLoginViewController.m */,
+				873CBD6E166A9A1500ECB4C5 /* WresttProfileViewController.h */,
+				873CBD6F166A9A1500ECB4C5 /* WresttProfileViewController.m */,
+				873CBD71166A9A1500ECB4C5 /* WresttQuizViewController.h */,
+				873CBD72166A9A1500ECB4C5 /* WresttQuizViewController.m */,
+				873CBD74166A9A1500ECB4C5 /* WresttTakeQuizViewController.h */,
+				873CBD75166A9A1500ECB4C5 /* WresttTakeQuizViewController.m */,
+				873CBD77166A9A1500ECB4C5 /* WresttToolsDetailViewController.h */,
+				873CBD78166A9A1500ECB4C5 /* WresttToolsDetailViewController.m */,
+				873CBD7A166A9A1500ECB4C5 /* WresttToolsViewController.h */,
+				873CBD7B166A9A1500ECB4C5 /* WresttToolsViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		EA58C9DB166D5DC100DD6D46 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				EA58C9DC166D5DD200DD6D46 /* wrestt.sqllite */,
+			);
+			name = Store;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -216,6 +288,7 @@
 				873CBD8A166A9A1500ECB4C5 /* WresttToolsViewController.xib in Resources */,
 				87FF34F4166A9AAA0002A329 /* WresttLogo.gif in Resources */,
 				87FD7C77166AA63D00EA6C25 /* defaultProfilePicture.png in Resources */,
+				EA58C9DD166D5DD200DD6D46 /* wrestt.sqllite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -235,6 +308,11 @@
 				873CBD85166A9A1500ECB4C5 /* WresttTakeQuizViewController.m in Sources */,
 				873CBD87166A9A1500ECB4C5 /* WresttToolsDetailViewController.m in Sources */,
 				873CBD89166A9A1500ECB4C5 /* WresttToolsViewController.m in Sources */,
+				EA58C9D2166D5D6F00DD6D46 /* WresttDatabaseInterface.m in Sources */,
+				EA58C9D3166D5D6F00DD6D46 /* WresttQuiz.m in Sources */,
+				EA58C9D4166D5D6F00DD6D46 /* WresttTool.m in Sources */,
+				EA58C9D5166D5D6F00DD6D46 /* WresttUser.m in Sources */,
+				EA58C9D8166D5D8400DD6D46 /* DejalActivityView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

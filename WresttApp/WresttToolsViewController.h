@@ -8,12 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
+@class WresttDatabaseInterface;
 @class WresttToolsDetailViewController;
 
 @interface WresttToolsViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+@property (strong, nonatomic) WresttDatabaseInterface *databaseInterface;
 @property (strong, nonatomic) WresttToolsDetailViewController *toolDetailViewController;
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) IBOutlet UISearchDisplayController *searchDisplayController;
+
+@property (strong, nonatomic) NSArray *tableData;
+@property (strong, nonatomic) NSArray *searchResults;
+
 
 @end

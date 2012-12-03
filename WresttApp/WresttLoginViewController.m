@@ -7,13 +7,15 @@
 //
 
 #import "WresttLoginViewController.h"
+#import "DejalActivityView.h"
 
 @interface WresttLoginViewController ()
 
 @end
 
 @implementation WresttLoginViewController
-@synthesize userName,password,login;
+
+@synthesize userName = _userName, password = _password, login = _login;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -46,14 +48,22 @@
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 
--(BOOL)textFieldShouldReturn:(UITextField *)textField
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     [textField resignFirstResponder];
     return YES;
 }
 
--(IBAction)login:(id)sender
+- (IBAction)login:(id)sender
 {
+    [DejalBezelActivityView activityViewForView:self.view withLabel:@"Login in..." width:150].showNetworkActivityIndicator = YES;
+    //Authenitcate user
+    [self performSelector:@selector(dismissSelf) withObject:nil afterDelay:1.5];
+}
+
+- (void)dismissSelf
+{
+    [DejalActivityView removeView];
     [self dismissModalViewControllerAnimated:YES];
 }
 

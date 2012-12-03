@@ -14,7 +14,7 @@
 
 @implementation WresttProfileViewController
 
-@synthesize profilePicture, firstName, lastName, email;
+@synthesize profilePicture = _profilePicture, firstName = _firstName, lastName = _lastName, email = _email;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -31,7 +31,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    profilePicture.image = [UIImage imageNamed:@"defaultProfilePicture.png"];
+    self.profilePicture.image = [UIImage imageNamed:@"defaultProfilePicture.png"];
 }
 
 - (void)viewDidUnload
@@ -107,7 +107,7 @@
     UIImageWriteToSavedPhotosAlbum(imageToSave, nil, nil , nil);
     
     // View the image on screen 
-    profilePicture.image = imageToSave;
+    self.profilePicture.image = imageToSave;
     
     // Tell controller to remove the picker from the view hierarchy and release object.
     [self dismissViewControllerAnimated:YES completion:nil];
