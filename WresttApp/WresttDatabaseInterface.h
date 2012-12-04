@@ -12,24 +12,16 @@
 #import "WresttTool.h"
 #import <sqlite3.h>
 
-@interface WresttDatabaseInterface : NSObject{
-    sqlite3 *database;
-    NSString * primaryKey;
-    NSString *text;
-}
+@interface WresttDatabaseInterface : NSObject
 
-@property (nonatomic,readonly) NSString * primaryKey;
-@property (nonatomic, retain) NSString * text;
+@property (strong, nonatomic) WresttUser *currentUser;
 
 
 + (id)sharedDatabaseInterface;
 
--(BOOL) validateUser:(NSString *)userID password:(NSString *)pass;
--(WresttUser *) getUser:(NSString *)userID;
--(int) getToolCount;
--(int) getQuizCount;
--(NSMutableArray *) getQuizs;
--(NSMutableArray *) getTools;
+- (BOOL)validateUser:(NSString *)userID password:(NSString *)pass;
+- (NSMutableArray *)getQuizzes;
+- (NSMutableArray *)getTools;
 
 
 @end

@@ -10,7 +10,7 @@
 
 @interface WresttQuiz : NSObject
 
-@property (strong,nonatomic) NSString * toolName;
+@property (strong,nonatomic) NSString * name;
 @property (strong,nonatomic) NSMutableArray * questions;
 @property (strong,nonatomic) NSMutableArray * answers;
 

@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class WresttTool;
+
 @interface WresttToolsDetailViewController : UIViewController
+
+@property (strong, nonatomic) WresttTool *tool;
 
 @end

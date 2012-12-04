@@ -12,15 +12,20 @@ static sqlite3_stmt *init_statement = nil;
 static WresttDatabaseInterface *dbInterface = nil;
 
 @implementation WresttDatabaseInterface
+{
+    sqlite3 *database;
+}
 
-@synthesize primaryKey,text;
+@synthesize currentUser;
 
 + (id)sharedDatabaseInterface
 {
     @synchronized(self)
     {
         if (dbInterface == nil)
+        {
             dbInterface = [[self alloc] init];
+        }
     }
     return dbInterface;
 }
@@ -45,7 +50,9 @@ static WresttDatabaseInterface *dbInterface = nil;
 {
     NSString * sqlString = [NSString stringWithFormat:@"Select * from users where uid = '%@' and pass = '%@'",userID,pass];
     const char *sql = [sqlString UTF8String];
-    
+
+    currentUser = nil;
+
     if(sqlite3_prepare_v2(database, sql, -1, &init_statement, NULL) != SQLITE_OK)
     {
         NSAssert(0,@"Failed %s",sqlite3_errmsg(database));
@@ -53,76 +60,19 @@ static WresttDatabaseInterface *dbInterface = nil;
     
     if(sqlite3_step(init_statement) == SQLITE_ROW)
     {
-        return YES;
+        WresttUser *user = [[WresttUser alloc] init];
+        user.firstName = @"Hello";
+        user.lastName = @"World";
+        user.email = @"HelloWorld1@fiu.edu";
+        user.picture = @"Test.jpeg";
+
+        currentUser = user;
     }
 
-    return NO;
+    return !(currentUser == nil);
 }
 
--(NSString *)getUser:(NSString *)userID
-{
-    NSString * sqlString = [NSString stringWithFormat:@"Select * from users"];
-    const char *sql = [sqlString UTF8String];
-    
-    if(sqlite3_prepare_v2(database, sql, -1, &init_statement, NULL) != SQLITE_OK)
-    {
-        NSAssert(0,@"Failed %s",sqlite3_errmsg(database));
-    }
-    
-    if(sqlite3_step(init_statement) == SQLITE_ROW)
-    {
-        self.text = [NSString stringWithUTF8String:(char *)sqlite3_column_text(init_statement, 0)];
-    }
-    else
-    {
-        NSLog(@"Failed %s",sqlite3_errmsg(database));
-        self.text = @"Error";
-    }
-    
-    return text;
-}
-
-- (int)getToolCount
-{
-    NSString * sqlString = [NSString stringWithFormat:@"Select * from tools"];
-    const char *sql = [sqlString UTF8String];
-    
-    if(sqlite3_prepare_v2(database, sql, -1, &init_statement, NULL) != SQLITE_OK)
-    {
-        NSAssert(0,@"Failed %s",sqlite3_errmsg(database));
-    }
-    
-    int count = 0;
-    
-    while(sqlite3_step(init_statement) == SQLITE_ROW)
-    {
-        count++;
-    }
-
-    return count;
-}
-
-- (int)getQuizCount
-{
-    NSString * sqlString = [NSString stringWithFormat:@"Select * from quiz"];
-    const char *sql = [sqlString UTF8String];
-    
-    if(sqlite3_prepare_v2(database, sql, -1, &init_statement, NULL) != SQLITE_OK)
-    {
-        NSAssert(0,@"Failed %s",sqlite3_errmsg(database));
-    }
-
-    int count = 0;
-         
-    while(sqlite3_step(init_statement) == SQLITE_ROW)
-    {
-        count++;
-    }
-
-    return count;
-}
-
--(NSArray *) getTools
+-(NSArray *)getTools
 {
     NSString * sqlString = [NSString stringWithFormat:@"Select * from tools"];
     const char *sql = [sqlString UTF8String];
@@ -150,8 +100,8 @@ static WresttDatabaseInterface *dbInterface = nil;
     return  [NSArray arrayWithArray:arr];
 }
 
--(NSArray *) getQuizs{
-
+-(NSArray *)getQuizzes
+{
     NSString * sqlString = [NSString stringWithFormat:@"Select * from quiz"];
     
     if(sqlite3_prepare_v2(database, [sqlString UTF8String], -1, &init_statement, NULL) != SQLITE_OK)
@@ -164,7 +114,9 @@ static WresttDatabaseInterface *dbInterface = nil;
     while (sqlite3_step(init_statement) == SQLITE_ROW)
     {
         WresttQuiz *quiz = [[WresttQuiz alloc] init];
-        
+
+        quiz.name = @"Quiz Name";
+
         [quiz.questions addObject: [NSString stringWithUTF8String:(char *)sqlite3_column_text(init_statement, 0)]];
         NSString * string = [NSString stringWithUTF8String:(char *)sqlite3_column_text(init_statement, 1)];
         [quiz.answers addObject:[string componentsSeparatedByString:@"-"]];

@@ -7,12 +7,15 @@
 //
 
 #import "WresttToolsDetailViewController.h"
+#import "WresttTool.h"
 
 @interface WresttToolsDetailViewController ()
 
 @end
 
 @implementation WresttToolsDetailViewController
+
+@synthesize tool = _tool;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -39,6 +42,14 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+
+    self.title = self.tool.name;
+    //set all the view fields
 }
 
 @end

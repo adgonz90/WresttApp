@@ -7,6 +7,9 @@
 //
 
 #import "WresttProfileViewController.h"
+#import "WresttDatabaseInterface.h"
+#import "WresttUser.h"
+#import <MobileCoreServices/UTCoreTypes.h>
 
 @interface WresttProfileViewController ()
 
@@ -14,7 +17,7 @@
 
 @implementation WresttProfileViewController
 
-@synthesize profilePicture = _profilePicture, firstName = _firstName, lastName = _lastName, email = _email;
+@synthesize databaseInterface = _databaseInterface, user = _user, profilePicture = _profilePicture, firstName = _firstName, lastName = _lastName, email = _email;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -30,6 +33,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    _databaseInterface = [WresttDatabaseInterface sharedDatabaseInterface];
     
     self.profilePicture.image = [UIImage imageNamed:@"defaultProfilePicture.png"];
 }
@@ -38,16 +42,27 @@
 {
     [super viewDidUnload];
     // Release any retained subviews of the main view.
-    
-    [self setProfilePicture:nil];
-    [self setFirstName:nil];
-    [self setLastName:nil];
-    [self setEmail:nil];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+
+    self.user = self.databaseInterface.currentUser;
+    if (self.user)
+    {
+        self.title = [NSString stringWithFormat:@"%@'s Profile", self.user.firstName];
+        //set all the view fields
+    }
+    else
+    {
+        NSLog(@"No User Logged In!");
+    }
 }
 
 - (IBAction)takeProfilePicture

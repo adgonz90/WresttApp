@@ -7,12 +7,15 @@
 //
 
 #import "WresttTakeQuizViewController.h"
+#import "WresttQuiz.h"
 
 @interface WresttTakeQuizViewController ()
 
 @end
 
 @implementation WresttTakeQuizViewController
+
+@synthesize quiz = _quiz;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -39,6 +42,14 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+
+    self.title = self.quiz.name;
+    //set all the view fields
 }
 
 @end

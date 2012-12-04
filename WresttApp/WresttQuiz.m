@@ -10,6 +10,6 @@
 
 @implementation WresttQuiz
 
-@synthesize questions, answers, toolName;
+@synthesize name, questions, answers;
 
 @end

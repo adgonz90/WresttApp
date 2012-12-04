@@ -112,7 +112,18 @@
         _toolDetailViewController = [[WresttToolsDetailViewController alloc] initWithNibName:@"WresttToolsDetailViewController" bundle:nil];
     }
     
-    [self.toolDetailViewController setTitle:[tableView cellForRowAtIndexPath:indexPath].textLabel.text];
+    WresttTool *tool;
+
+    if ([tableView isEqual:self.searchDisplayController.searchResultsTableView])
+    {
+        tool = [self.searchResults objectAtIndex:indexPath.row];
+    }
+    else
+    {
+        tool = [self.tableData objectAtIndex:indexPath.row];
+    }
+
+    self.toolDetailViewController.tool = tool;
     
     [self.navigationController pushViewController:self.toolDetailViewController animated:YES];
     
@@ -139,7 +150,7 @@
 
 - (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope
 {
-    NSPredicate *resultPredicate = [NSPredicate predicateWithFormat:@"SELF contains[cd] %@", searchText];
+    NSPredicate *resultPredicate = [NSPredicate predicateWithFormat:@"SELF.name contains[cd] %@", searchText];
 
     self.searchResults = [self.tableData filteredArrayUsingPredicate:resultPredicate];
 }

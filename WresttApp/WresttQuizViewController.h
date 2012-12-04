@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+@class WresttDatabaseInterface;
 @class WresttTakeQuizViewController;
 
 @interface WresttQuizViewController : UIViewController
 
+@property (strong, nonatomic) WresttDatabaseInterface *databaseInterface;
 @property (strong, nonatomic) WresttTakeQuizViewController *takeQuizViewController;
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;

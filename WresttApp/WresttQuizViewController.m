@@ -7,7 +7,9 @@
 //
 
 #import "WresttQuizViewController.h"
+#import "WresttDatabaseInterface.h"
 #import "WresttTakeQuizViewController.h"
+#import "WresttQuiz.h"
 
 @interface WresttQuizViewController ()
 
@@ -15,7 +17,7 @@
 
 @implementation WresttQuizViewController
 
-@synthesize takeQuizViewController = _takeQuizViewController, tableView = _tableView, searchDisplayController = _quizSearchDisplayController, tableData = _tableData, searchResults = _searchResults;
+@synthesize databaseInterface =_databaseInterface, takeQuizViewController = _takeQuizViewController, tableView = _tableView, searchDisplayController = _quizSearchDisplayController, tableData = _tableData, searchResults = _searchResults;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -31,16 +33,9 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    _databaseInterface = [WresttDatabaseInterface sharedDatabaseInterface];
 
-    NSArray *items = [[NSArray alloc] initWithObjects:
-                      @"Code Geass",
-                      @"Asura Cryin'",
-                      @"Voltes V",
-                      @"Mazinger Z",
-                      @"Daimos",
-                      nil];
-
-    self.tableData = items;
+    self.tableData = [self.databaseInterface getQuizzes];
 
     [self.tableView reloadData];
 }
@@ -82,26 +77,28 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"ToolCellIdentifier";
+    static NSString *CellIdentifier = @"QuizCellIdentifier";
 
     UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 
     if (cell == nil)
     {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
 
+    WresttQuiz *quiz;
+
     if ([tableView isEqual:self.searchDisplayController.searchResultsTableView])
     {
-        cell.textLabel.text = [self.searchResults objectAtIndex:indexPath.row];
-        cell.detailTextLabel.text = @"Search";
+        quiz = [self.searchResults objectAtIndex:indexPath.row];
     }
     else
     {
-        cell.textLabel.text = [self.tableData objectAtIndex:indexPath.row];
-        cell.detailTextLabel.text = @"Table";
+        quiz = [self.tableData objectAtIndex:indexPath.row];
     }
+
+    cell.textLabel.text = quiz.name;
 
     return cell;
 }
@@ -112,11 +109,21 @@
     {
         _takeQuizViewController = [[WresttTakeQuizViewController alloc] initWithNibName:@"WresttTakeQuizViewController" bundle:nil];
     }
+
+    WresttQuiz *quiz;
+
+    if ([tableView isEqual:self.searchDisplayController.searchResultsTableView])
+    {
+        quiz = [self.searchResults objectAtIndex:indexPath.row];
+    }
+    else
+    {
+        quiz = [self.tableData objectAtIndex:indexPath.row];
+    }
     
-    [self.takeQuizViewController setTitle:[tableView cellForRowAtIndexPath:indexPath].textLabel.text];
-    
+    self.takeQuizViewController.quiz = quiz;
     [self.navigationController pushViewController:self.takeQuizViewController animated:YES];
-    
+
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
@@ -140,7 +147,7 @@
 
 - (void)filterContentForSearchText:(NSString*)searchText scope:(NSString*)scope
 {
-    NSPredicate *resultPredicate = [NSPredicate predicateWithFormat:@"SELF contains[cd] %@", searchText];
+    NSPredicate *resultPredicate = [NSPredicate predicateWithFormat:@"SELF.name contains[cd] %@", searchText];
 
     self.searchResults = [self.tableData filteredArrayUsingPredicate:resultPredicate];
 }

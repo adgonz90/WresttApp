@@ -7,9 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <MobileCoreServices/UTCoreTypes.h>
+
+@class WresttDatabaseInterface;
+@class WresttUser;
 
 @interface WresttProfileViewController : UIViewController <UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+
+@property (strong, nonatomic) WresttDatabaseInterface *databaseInterface;
+@property (weak, nonatomic) WresttUser *user;
 
 @property (weak, nonatomic) IBOutlet UIImageView *profilePicture;
 @property (weak, nonatomic) IBOutlet UITextField *firstName;

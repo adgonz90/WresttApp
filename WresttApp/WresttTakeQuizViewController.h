@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class WresttQuiz;
+
 @interface WresttTakeQuizViewController : UIViewController
+
+@property (strong, nonatomic) WresttQuiz *quiz;
 
 @end
